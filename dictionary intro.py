@@ -1,4 +1,4 @@
-#dictionary
+#dictionary- set of key value pairs
 d={'name':'Dhanushya','roll_no':20,'age':20,'mark':30}
 print(d)
 print(d['name'])
