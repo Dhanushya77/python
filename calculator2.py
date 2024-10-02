@@ -1,4 +1,3 @@
-#calculator 
 while True:
     print('''
     1:Addition
@@ -6,7 +5,7 @@ while True:
     3:Multiplication
     4:Division
     5.Modulus
-    ''')
+    6.Exit''')
         
     choice=int(input("select your choice:"))
 
@@ -35,16 +34,12 @@ while True:
         second_num= int(input("enter a number:"))
         modulus= first_num%second_num
         print("modulus is",modulus)
+    elif choice==6:
+        break
     
     else:
         print("wrong choice")
-    choice_1=input("do you want to continue (y/n)")
-    if choice_1=="n":
-        break
-    elif choice_1=="y":
-        continue
-    else:
-        print("invalid choice")
+ 
     
 
 
