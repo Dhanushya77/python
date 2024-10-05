@@ -1,5 +1,5 @@
 employees = [{'id':100,'name':'Dhan','age': 28,'position':'Developer','salary':60000.0,'password':'pas'}]
-
+attendance=[{'name':'dhan','attendance':'present'}]
 while True:
     print('''
         1. Login
@@ -20,7 +20,8 @@ while True:
                     2.Update Employee
                     3.Delete Employee
                     4.View Employees
-                    5.Log out
+                    5.View attendance
+                    6.Log out
                 ''')
                 ch1=int(input('Enter choice: '))
                 
@@ -69,8 +70,12 @@ while True:
                     print('{:<10}{:<15}{:<10}{:<15}{:<10}'.format('ID', 'Name', 'Age', 'Position', 'Salary'))
                     for emp in employees:
                         print('{:<10}{:<15}{:<10}{:<15}{:<10}'.format(emp['id'], emp['name'], emp['age'], emp['position'], emp['salary']))
-                
-                elif ch1==5:  
+                elif ch1==5:
+                    print('{:<10}{:<10}'.format('Name','Attendance'))
+                    for i in attendance:
+                        print('{:<10}{:<10}'.format(i['name'],i['attendance']))
+                    print('Total attendance for the day is',len(attendance))
+                elif ch1==6:  
                     break
                 else:
                     print("Invalid choice.")
@@ -83,23 +88,29 @@ while True:
                     f=1
                     while True:
                         print('''
-                            1.View My Details
-                            2.Update My Details
-                            3.Log out
+                            1.Attendance
+                            2.View My Details
+                            3.Update My Details
+                            4.Log out
                         ''')
                         ch2=int(input('Enter choice:'))
+                        if ch2==1:
+                            name=input('Enter your name:')
+                            attndnce=input('Mark attendace(present/absent):')
+                            attendance.append({'Name':name,'attendance':attndnce})
+                            print("Attendance marked successfully")
                         
-                        if ch2==1: 
+                        elif ch2==2: 
                             print('{:<10}{:<15}{:<10}{:<15}{:<10}'.format('ID', 'Name', 'Age', 'Position', 'Salary'))
                             print('{:<10}{:<15}{:<10}{:<15}{:<10}'.format(emp['id'], emp['name'], emp['age'], emp['position'], emp['salary']))
                         
-                        elif ch2==2: 
+                        elif ch2==3: 
                             emp['age']=int(input('Enter new age: '))
                             emp['position']=input('Enter new position: ')
                             emp['salary']=input('Enter new salary:')
                             print("Details updated successfully.")
                         
-                        elif ch2==3: 
+                        elif ch2==4: 
                             break
                         else:
                             print("Invalid choice.")
