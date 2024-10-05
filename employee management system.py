@@ -97,7 +97,7 @@ while True:
                         if ch2==1:
                             name=input('Enter your name:')
                             attndnce=input('Mark attendace(present/absent):')
-                            attendance.append({'Name':name,'attendance':attndnce})
+                            attendance.append({'name':name,'attendance':attndnce})
                             print("Attendance marked successfully")
                         
                         elif ch2==2: 
