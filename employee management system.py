@@ -1,35 +1,13 @@
-
-employees = [{'id':100, 'name':'Dhan', 'age': 28,'position':'Developer', 'salary':60000, 'password':'pas'}]
+employees = [{'id':100,'name':'Dhan','age': 28,'position':'Developer','salary':60000.0,'password':'pas'}]
 
 while True:
     print('''
-        1. Register(Admin Only)
-        2. Login
-        3. Exit
+        1. Login
+        2. Exit
     ''')
     ch=int(input('Enter your choice:'))
-    
-    if ch==1:
-        admin_username=input('Enter admin username:')
-        admin_password=input('Enter admin password:')
-        
-        if admin_username=='admin' and admin_password=='admin':
-            if len(employees)==0:
-                emp_id=100
-            else:
-                emp_id=employees[-1]['id'] + 1
-            print('New Employee ID:', emp_id)
-            name=input('Enter employee name:')
-            age=int(input('Enter employee age:'))
-            position=input('Enter employee position:')
-            salary=float(input('Enter employee salary:'))
-            password=input('Set employee password:')
-            employees.append({'id':emp_id,'name':name,'age':age,'position':position,'salary':salary,'password':password})
-            print("Employee registered successfully.")
-        else:
-            print("Invalid username or password")
 
-    elif ch==2: 
+    if ch==1: 
         username=input('Enter employee ID or admin:')
         password=input('Enter password:')
         f=0       
@@ -38,11 +16,11 @@ while True:
             f=1
             while True:
                 print('''
-                    1. Add Employee
-                    2. Update Employee
-                    3. Delete Employee
-                    4. View Employees
-                    5. Log out
+                    1.Add Employee
+                    2.Update Employee
+                    3.Delete Employee
+                    4.View Employees
+                    5.Log out
                 ''')
                 ch1=int(input('Enter choice: '))
                 
@@ -96,7 +74,6 @@ while True:
                     break
                 else:
                     print("Invalid choice.")
-
        
         elif username.isdigit():
             emp_id=int(username)
@@ -106,9 +83,9 @@ while True:
                     f=1
                     while True:
                         print('''
-                            1. View My Details
-                            2. Update My Details
-                            3. Log out
+                            1.View My Details
+                            2.Update My Details
+                            3.Log out
                         ''')
                         ch2=int(input('Enter choice:'))
                         
@@ -125,15 +102,15 @@ while True:
                         elif ch2==3: 
                             break
                         else:
-                            print("Invalid choice")
+                            print("Invalid choice.")
                     break
             if f==0:
-                print("Invalid employee ID or password.")
+                print("Invalid employee ID or password!")
 
         else:
-            print("Invalid username or password.")
+            print("Invalid username or password!")
 
-    elif ch==3: 
+    elif ch==2: 
         break
     else:
         print("Invalid choice.")
