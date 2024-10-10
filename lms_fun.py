@@ -76,35 +76,10 @@ def view_user():
         print('{:<10}{:<12}{:<20}{:<12}'.format(i['id'],i['name'],i['email'],i['ph_no']))
 
 def view_pro(users):
-    print(users)
+    print (users)
     
     
-def lend_book():
-    id=int(input('enter id:'))
-    f1=0
-    for j in book:
-        for i in user:
-            if j['id']==id:
-                f1=1
-                if j['stock']>0:
-                    i['book'].append(id)
-                    j['stock']-=1
-                else:
-                    print('out of stock')
-                    if f1==0:
-                        print('book not available')
 
-def ret_book():
-    id=int(input('enter id:'))
-    f1=0
-    for j in book:
-        for i in user:
-            if j['id']==id and id in i['book']:
-                f1=1
-                j['stock']+=1
-                i['book'].remove(id)
-                if f1==0:
-                    print('book not available')
                     
 
 
@@ -119,7 +94,7 @@ while True:
     if ch==1:
         register()
     elif ch==2:
-        f=login()
+        f,users=login()
         if f==1:
             print('admin login')
             while True:
@@ -157,12 +132,7 @@ while True:
                     ch2=int(input('enter choice:'))
                     if ch2==1:
                         view_pro(users)
-                    elif ch2==2:
-                        view_book()
-                    elif ch2==3:
-                        lend_book()
-                    elif ch2==4:
-                        ret_book()
+                    
                     elif ch2==5:
                         break
                     else:
