@@ -8,7 +8,12 @@ while True:
         4.Delete Student
         5.Exit
         ''')
-    ch = int(input('Your choice:'))
+    while True:
+        try:
+            ch = int(input('Your choice:'))
+            break
+        except:
+            pass
     if ch == 1:
         roll_no = int(input('Enter roll number:'))
         name = str(input('Enter name:'))
