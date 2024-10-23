@@ -1,3 +1,5 @@
+# multiple inheritance
+
 class school:
     def classroom(self):
         print('school classroom')
