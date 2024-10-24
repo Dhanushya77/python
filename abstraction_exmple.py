@@ -1,3 +1,5 @@
+# abstraction method
+
 from abc import ABC,abstractmethod
 class clg:
     @abstractmethod
