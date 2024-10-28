@@ -32,7 +32,12 @@ except:
 # for i in data:
 #     print(i)
 
-value=input('Enter value to be updated:')
-new_name=input('New name:')
-con.execute("update user set name=? where name=? ",(new_name,value,))
-con.commit()
+# value=input('Enter value to be updated:')
+# new_name=input('New name:')
+# con.execute("update user set name=? where name=? ",(new_name,value,))
+# con.commit()
+
+# no=int(input("enter a no:"))
+# con.execute("delete from user where no=?",(no,))
+# con.commit()
+
