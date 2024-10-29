@@ -4,7 +4,7 @@ try:
     con.execute("create table user(No int, Name text, Age int)")
 except:
     print("Table created")
-# con.execute("insert into user(No, Name, Age)values(1,'dhanushya',22),(2,'anu',20)")
+# con.execute("insert into user(No, Name, Age)values(9,'dhanushya',20),(10,'anu',28)")
 # con.commit()
 
 # no = int(input('Enter no:'))
@@ -40,4 +40,79 @@ except:
 # no=int(input("enter a no:"))
 # con.execute("delete from user where no=?",(no,))
 # con.commit()
+
+# data=con.execute("select * from user where name like 'a%'")    #starts with a
+# for i in data:
+#     print(i)
+
+# data=con.execute("select * from user where name like '__a%'")    #second letter a   # percentage multi-character
+# for i in data:
+#     print(i)
+    
+# data=con.execute("select * from user where name like '___'")    #second letter a    #underscore-single character
+# for i in data:
+#     print(i)
+    
+# data = con.execute("select * from user order by name")  #ascending order
+# for i in data:
+#     print(i)
+    
+# data = con.execute("select * from user order by name desc")  #descending order
+# for i in data:
+#     print(i)
+
+
+try:
+    con.execute("create table address(No int, place text, pincode int)")
+except:
+    print("Table created")
+
+# limit = int(input('Enter limit:'))
+# for i in range(limit):
+#     no = int(input('Enter no:'))
+#     place = input('Enter place:')
+#     pin = int(input('Enter pin:'))
+#     con.execute("insert into address(No, place, pincode)values(?, ?, ?)",(no, place, pin))
+#     con.commit()
+
+# data=con.execute ("select user.No, user.Name, user.Age, address.place, address.pincode from user join address on user.No=address.No")
+# for i in data:
+#     print(i)
+
+# data=con.execute ("select user.No, user.Name, user.Age, address.place, address.pincode from user left join address on user.No=address.No")
+# for i in data:
+#     print(i)
+   
+   
+# 
+# #instead of right join we do left join swapping the tables because right join is not supported in this version only supported in versions 3.10  and above   
+# data=con.execute ("select user.No, user.Name, user.Age, address.place, address.pincode from address left join user on user.No=address.No")
+# for i in data:
+#     print(i) 
+
+
+# #group by 
+# data = con.execute("select name, age from user group by name")
+# for i in data:
+#     print(i)
+
+# data = con.execute("select name, min(age) from user group by name")
+# for i in data:
+#     print(i)
+
+# data = con.execute("select name, max(age) from user group by name")
+# for i in data:
+#     print(i)
+
+# data = con.execute("select name, sum(age) from user group by name")
+# for i in data:
+#     print(i)
+
+# data = con.execute("select name, avg(age) from user group by name")
+# for i in data:
+#     print(i)
+
+# data = con.execute("select name, count(age) from user group by name")
+# for i in data:
+#     print(i)
 

@@ -1,6 +1,6 @@
-char=['A','B','C','D']
-for i in range(len(char)):
-    row=[]
-    for j in range(i,-1,-1):
-        row.append(char[j])
-    print(row)
+a=65
+for i in range(4):
+    for j in range(i+1):
+        print(chr(a-j),end='\t')
+    print()
+    a+=1
